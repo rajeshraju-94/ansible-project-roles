@@ -24,8 +24,6 @@
     dest: /etc/systemd/system/backend.service
 
 - name: install dependencies
-  tags:
-  - deployment
   ansible.builtin.command: npm install
   args:
     chdir: /app
