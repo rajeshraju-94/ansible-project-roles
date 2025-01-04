@@ -19,9 +19,9 @@
 - name: import tasks from common role
   tags:
   - deployment
-  ansible.builtin.import_role:
-    name: common
-    tasks_from: app-pre-req
+  ansible.builtin.template:
+    src: backend.service.j2
+    dest: /etc/systemd/system/backend.service
 
 - name: install dependencies
   tags:
